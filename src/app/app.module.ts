@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { YenComponent } from './components/yen/yen.component';
 import { UsdComponent } from './components/usd/usd.component';
 import { DataService } from './services/data/data.service';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DataService } from './services/data/data.service';
     UsdComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
