@@ -12,22 +12,22 @@ export function customerReducer(state: CustomerState = initialeState, action: Cu
       return {
         ...state,
         customerList: [...action.payload]
-      }
+      };
     case CustomerActionsType.ADD_CUSTOMER:
       return {
         ...state,
         customerList: [...state.customerList, action.payload]
-      }
+      };
     case CustomerActionsType.DELETE_CUSTOMER:
       return {
         ...state,
         customerList: [...state.customerList.filter(c => c.id !== action.payload.id)]
-      }
+      };
     case CustomerActionsType.UPDATE_CUSTOMER:
       return {
         ...state,
         customerList: [...state.customerList.map((customer: CustomerInterface) => customer.id === action.payload.id? action.payload: customer)]
-      }
+      };
     default:
       return state;
   }
