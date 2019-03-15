@@ -5,7 +5,11 @@ export enum CustomerActionsType {
   LOAD_CUSTOMER_LIST = ' [Customer] load customer',
   ADD_CUSTOMER = ' [Customer] save customer',
   UPDATE_CUSTOMER = ' [Customer] update customer',
+<<<<<<< HEAD
+  DELETE_CUSTOMER = ' [Customer] remove customer'
+=======
   DELETE_CUSTOMER = ' [Customer] remove customer',
+>>>>>>> 1664a2395254fdaa1b7e5bf011212ea831db4d90
 }
 
 export class LoadCustomer implements Action {

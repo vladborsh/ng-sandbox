@@ -5,7 +5,11 @@ export enum AccountActionsType {
   LOAD_ACCOUNT_LIST = '[Account] load account',
   ADD_ACCOUNT = '[Account] save account',
   UPDATE_ACCOUNT = '[Account] update account',
+<<<<<<< HEAD
+  DELETE_ACCOUNT = '[Account] delete account'
+=======
   DELETE_ACCOUNT = '[Account] delete account',
+>>>>>>> 1664a2395254fdaa1b7e5bf011212ea831db4d90
 }
 
 export class LoadAccount implements Action {
