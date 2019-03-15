@@ -10,10 +10,12 @@ export const selectAccount = createFeatureSelector<AppState, AccountState>(
 export const selectAccountList = createSelector(
   selectAccount,
   (state: AccountState) => state.accountList
+
 );
 
 export const selectAccountActive = createSelector(
   selectAccountList,
   (state: AccountInterface[], id) => state.filter(i => i.id === id)
 );
+
 
