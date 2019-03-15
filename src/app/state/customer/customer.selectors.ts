@@ -3,6 +3,7 @@ import { CustomerState } from "./customer";
 import { AppState } from "../../app.state";
 import { CustomerInterface } from "../../services/pseudo-backend/models/customer.interface";
 
+
 export const selectorCustomer = createFeatureSelector<AppState, CustomerState>('customers');
 
 export const selectorCustomerList = createSelector(

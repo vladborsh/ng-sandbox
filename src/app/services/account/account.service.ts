@@ -28,7 +28,7 @@ export class AccountService {
       filter((a: AccountInterface[]) => !a.length),
       switchMapTo(this.pseudoService.getAccount$())
     ).subscribe(value => this.store$.dispatch(new LoadAccount(value)));
-
+    //
     return checkStoreAccounts$;
   }
 

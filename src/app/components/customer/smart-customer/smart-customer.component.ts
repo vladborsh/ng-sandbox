@@ -1,9 +1,9 @@
-import {AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs/internal/Observable";
 import { CustomerInterface } from "../../../services/pseudo-backend/models/customer.interface";
 import { CustomerService } from "../../../services/customer/customer.service";
-import {interval} from "rxjs/internal/observable/interval";
-import {take} from "rxjs/operators";
+import { interval } from "rxjs/internal/observable/interval";
+import { take } from "rxjs/operators";
 
 @Component({
   selector: 'app-smart-customer',
@@ -15,6 +15,7 @@ export class SmartCustomerComponent implements OnInit, AfterViewInit {
   public smartCustomers$: Observable<CustomerInterface[]>;
   public customerInterval$: Observable<number> = interval(1000);
   public customerCount: number = null;
+
   constructor(private customerService: CustomerService, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -22,9 +23,9 @@ export class SmartCustomerComponent implements OnInit, AfterViewInit {
     this.customerInterval$.pipe(take(20)).subscribe(value => {
       this.customerCount = value;
       this.cd.detectChanges();
-      console.log('from customer', this.customerCount);
     });
   }
+
   ngAfterViewInit() {
     this.cd.detach();
   }
