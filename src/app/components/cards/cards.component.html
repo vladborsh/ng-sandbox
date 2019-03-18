@@ -9,12 +9,16 @@
     placeholder="0000 0000 0000 0000"
     autofocus
     autocomplete="off"
-    size="14"
-    maxlength="16">
+    size="18"
+    maxlength="19"
+    (input)="getNumberCard(numberCard.value)"
+    #numberCard
+    [value]="numberCardGaps"
+  >
   <div class="alert alert-danger"
        *ngIf="cardForm.controls['numberCard'].invalid && cardForm.controls['numberCard'].touched">
     <p [hidden]="!cardForm.controls['numberCard'].hasError('numberAlgorithm')">This number of card is wrong</p>
-    <p [hidden]="!cardForm.controls['numberCard'].hasError('inputValidatorTypeOf')">Please, type only numbers</p>
+    <p [hidden]="!cardForm.controls['numberCard'].hasError('inputValidatorTypeOf')">The input isn't correct</p>
     <p [hidden]="!cardForm.controls['numberCard'].hasError('required')">Number of card field is required</p>
     <p [hidden]="!cardForm.controls['numberCard'].hasError('inputMinLength')">This input must have 16 numbers</p>
   </div>
@@ -27,12 +31,19 @@
          formControlName="dataFinishCard"
          placeholder="00 / 00"
          autocomplete="off"
-         maxlength="4">
+         maxlength="7"
+         [value]="dateSlesh"
+         (input)="getDateSlesh(date.value)"
+         #date
+  >
   <div class="alert alert-danger"
        *ngIf="cardForm.controls['dataFinishCard'].invalid && cardForm.controls['dataFinishCard'].touched">
-    <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('inputValidatorTypeOf')">Please, type only numbers</p>
     <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('required')">Date field is required</p>
+    <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('dataTypeValidator')">The input isn't correct</p>
+    <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('dataNumberValidator')">Dont take this symbol</p>
     <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('inputMinLength')">This input must have 4 numbers</p>
+    <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('dataMonthValidator')">Type correct month</p>
+    <p [hidden]="!cardForm.controls['dataFinishCard'].hasError('dataYearValidator')">Type correct year</p>
   </div>
   <label for="cvv">CVV of card</label>
   <input type="text"
@@ -43,12 +54,15 @@
          formControlName="cvv"
          placeholder="000"
          autocomplete="off"
-         maxlength="3">
+         maxlength="3"
+  >
   <div class="alert alert-danger"
        *ngIf="cardForm.controls['cvv'].invalid && cardForm.controls['cvv'].touched">
-    <p [hidden]="!cardForm.controls['cvv'].hasError('inputValidatorTypeOf')">Please, type only numbers</p>
+    <p [hidden]="!cardForm.controls['cvv'].hasError('inputValidatorTypeOf')">The input isn't correct</p>
     <p [hidden]="!cardForm.controls['cvv'].hasError('required')">CVV field is required</p>
     <p [hidden]="!cardForm.controls['cvv'].hasError('inputMinLength')">This input must have 3 numbers</p>
+    <p [hidden]="!cardForm.controls['cvv'].hasError('cvvNumberValidator')">Type only integer</p>
   </div>
   <button class="btn btn-default" type="submit" [disabled]="cardForm.invalid">check</button>
 </form>
+<app-card-errors [numberErrorsCard]="cardNumberErrors" [dateErrorsCard]="dateErrors" [cvvErrorsCard]="cvvErrors"></app-card-errors>
