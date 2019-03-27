@@ -1,28 +1,25 @@
 import { Component, forwardRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
-import { numberAlgorithm } from "../../validators/card/number-card/number.algorithm";
-import { inputValidatorTypeOf } from "../../validators/card/type.of.validator";
+import { numberAlgorithmValidator } from "../../validators/card/number-card/number.algorithm.validator";
 import { inputMinLength } from "../../validators/card/min.length.validator";
 import { cvvNumberValidator } from "../../validators/card/cvv/cvv.number.validator";
-import { dataTypeValidator } from "../../validators/card/data-finish-card/data.type.validator";
-import { dataMonthValidator } from "../../validators/card/data-finish-card/data.month.validator";
-import { dataYearValidator } from "../../validators/card/data-finish-card/data.year.validator";
+import { dateMonthValidator } from "../../validators/card/date-finish-card/date.month.validator";
+import { dateYearValidator } from "../../validators/card/date-finish-card/date.year.validator";
+import { typeOfValidator } from "../../validators/card/type.of.validator";
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss'],
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => CardsComponent),
+    useExisting: forwardRef(() => CardComponent),
     multi: true
   }]
 })
-export class CardsComponent implements OnInit, OnDestroy, ControlValueAccessor {
-  public validCardForm: string;
+export class CardComponent implements OnInit, OnDestroy, ControlValueAccessor {
   public cardForm: FormGroup;
   public _card;
-  public cardFormErrors = {};
   private onChange: (card: any) => {};
   private onTouch: () => {};
   constructor() { }
@@ -32,32 +29,25 @@ export class CardsComponent implements OnInit, OnDestroy, ControlValueAccessor {
       numberCard: new FormControl('', [
         Validators.required,
         inputMinLength(16),
-        inputValidatorTypeOf,
-        numberAlgorithm,
+        typeOfValidator,
+        numberAlgorithmValidator
       ]),
 
-      dataFinishCard: new FormControl('', [
+      dateFinishCard: new FormControl('', [
         Validators.required,
         inputMinLength(4),
-        dataMonthValidator,
-        dataYearValidator,
-        dataTypeValidator
+        typeOfValidator,
+        dateMonthValidator,
+        dateYearValidator
       ]),
 
       cvv: new FormControl('', [
         Validators.required,
         inputMinLength(3),
-        inputValidatorTypeOf,
+        typeOfValidator,
         cvvNumberValidator
       ])
     });
-
-    this.cardForm.statusChanges.subscribe(value => {
-      this.validCardForm = value;
-      console.log('from validForm', this.validCardForm);
-      this.cardFormErrors = this.cardForm;
-    });
-
 
   }
 
@@ -77,9 +67,11 @@ export class CardsComponent implements OnInit, OnDestroy, ControlValueAccessor {
   registerOnChange(fn: any): void {
     this.onChange = fn;
   };
+
   registerOnTouched(fn: any): void {
     this.onTouch = fn;
   };
+
   ngOnDestroy() {
 
   }

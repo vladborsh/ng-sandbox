@@ -1,0 +1,44 @@
+<form [formGroup]="cardForm" (ngSubmit)="submit()">
+  <label for="numberCard">Number of card</label>
+  <input
+    type="text"
+    class="form-control"
+    name="numberCard"
+    id="numberCard"
+    formControlName="numberCard"
+    placeholder="0000 0000 0000 0000"
+    autofocus
+    autocomplete="off"
+    size="18"
+    maxlength="16"
+  >
+  <form-control-errors [control]="cardForm.controls['numberCard']"></form-control-errors>
+  <label for="dateFinishCard">Data of card</label>
+  <input type="text"
+         name="dateFinishCard"
+         class="form-control"
+         size="3"
+         id="dateFinishCard"
+         formControlName="dateFinishCard"
+         placeholder="00 / 00"
+         autocomplete="off"
+         maxlength="4"
+  >
+  <form-control-errors [control]="cardForm.controls['dateFinishCard']"></form-control-errors>
+  <div class="form-group has-success">
+  <label for="cvv">CVV of card</label>
+  <input type="text"
+         name="cvv"
+         id="cvv"
+         class="form-control"
+         size="3"
+         formControlName="cvv"
+         placeholder="000"
+         autocomplete="off"
+         maxlength="3"
+  >
+  </div>
+  <form-control-errors [control]="cardForm.controls['cvv']"></form-control-errors>
+  <button class="btn btn-default" type="submit" [disabled]="cardForm.invalid">check</button>
+</form>
+
