@@ -1,7 +1,7 @@
 input{
   display: block;
 }
-input.ng-touched.ng-invalid {
+input.ng-touched.ng-invalid.ng-dirty {
   border:solid red 2px;
 }
 input.ng-touched.ng-valid {

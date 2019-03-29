@@ -12,7 +12,8 @@ import { SmartAccountComponent } from './components/account/smart-account/smart-
 import { DumbAccountComponent } from './components/account/dumb-account/dumb-account.component';
 import { SmartCustomerComponent } from './components/customer/smart-customer/smart-customer.component';
 import { DumbCustomerComponent } from './components/customer/dumb-customer/dumb-customer.component';
-import { CardsComponent } from './components/cards/cards.component';
+import { CardComponent } from './components/card/card.component';
+import { FormControlErrorsComponent } from './components/form-control-errors/form-control-errors.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CardsComponent } from './components/cards/cards.component';
     DumbAccountComponent,
     SmartCustomerComponent,
     DumbCustomerComponent,
-    CardsComponent
+    CardComponent,
+    FormControlErrorsComponent
   ],
   imports: [
     BrowserModule,
