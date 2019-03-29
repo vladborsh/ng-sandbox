@@ -1,0 +1,3 @@
+<div class="alert alert-danger" *ngIf="control.invalid && control.dirty">
+  <p *ngFor="let item of controlErrors$ | async as errors">{{item}}</p>
+</div>

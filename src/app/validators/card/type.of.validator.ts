@@ -1,8 +1,8 @@
 import {AbstractControl} from "@angular/forms";
 
-export function inputValidatorTypeOf(input: AbstractControl): {[key: string]: boolean} | null {
-  if(isNaN(input.value) || (input.value * 1 === 0) || (input.value[0] === ' ')) {
-    return {inputValidatorTypeOf: true};
+export function typeOfValidator(input: AbstractControl): {[key: string]: string} | null {
+  if(isNaN(input.value)){
+    return {typeOfValidator: 'Type only numbers'}
   }
   return null;
 }
