@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  form: FormGroup;
+  public form: FormGroup;
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
