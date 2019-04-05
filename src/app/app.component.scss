@@ -1,0 +1,54 @@
+h1,p {
+  color: #fff;
+}
+h1{
+  margin-bottom: 22px;
+}
+p{
+  width: 550px;
+}
+button{
+  background: #fffb64;
+  width: 180px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.credit{
+  width: 550px;
+  padding: 20px 15px;
+  background: lightseagreen;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+.no-active{
+  display: none;
+}
+.bottom{
+  margin-top: 50px;
+}
+.credit-card{
+  margin-left: 20px;
+}
+
+//The card background and p width
+
+#second{
+  background: #3d4157;
+}
+#second p {
+  width: 500px;
+}
+#third{
+  background: #161722;
+}
+#third p {
+  width: 429px;
+}
+#four{
+  background: black;
+}
+#four p {
+  width: 455px;
+}

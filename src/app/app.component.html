@@ -1,3 +1,50 @@
+<app-slider>
+  <ng-template carouselItem>
+    <div class="credit no-active">
+      <div class="credit-card">
+        <h1>Кредит наличными</h1>
+        <p>Получите кредит наличными до 2 млн рублей. Без справок и поручителей</p>
+        <div class="bottom">
+          <button>Оформить кредит</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselItem>
+    <div class="credit no-active" id="second">
+      <div class="credit-card">
+        <h1>Тинькофф Платинум</h1>
+        <p>Кредитная карта с лимитом до 300 000 ₽. Ставка от 12%. Без процентов до 12 месяцев</p>
+        <div class="bottom">
+          <button>Оформить сейчас</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselItem>
+    <div class="credit no-active" id="third">
+      <div class="credit-card">
+        <h1>Tinkoff Black</h1>
+        <p>Оформите карту не позже 31 октября и до конца года получайте доход до 10% годовых</p>
+        <div class="bottom">
+          <button>Оформить карту</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template carouselItem>
+    <div class="credit no-active" id="four">
+      <div class="credit-card">
+        <h1>Расчетный счет</h1>
+        <p>Мгновенные переводы. Интернет-банк. Получайте до 6% годовых на остаток</p>
+        <div class="bottom">
+          <button>Открыть счет</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</app-slider>
 <form [formGroup]="form">
   <app-card formControlName="count"></app-card>
 </form>

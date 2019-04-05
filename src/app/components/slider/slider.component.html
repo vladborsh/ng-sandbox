@@ -1,0 +1,11 @@
+<div class="slider">
+  <a href="#"  class="prev" (click)="prev()"> < </a>
+  <ng-content>
+
+  </ng-content>
+  <a href="#" class="next" (click)="next()"> > </a>
+  <span class="span-number"><span class="count">{{count + 1}}</span> / {{lengthCard}}</span>
+</div>
+<div class="navigation">
+  <a href="#" *ngFor="let item of queryLisCarousel  ; let i = index" class="navigation-a" [ngClass]="{'active-a': i === count, 'no-active-a': i !== count}" (click)="swapCard(i)">{{item.length}}</a>
+</div>

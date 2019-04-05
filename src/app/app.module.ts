@@ -14,6 +14,8 @@ import { SmartCustomerComponent } from './components/customer/smart-customer/sma
 import { DumbCustomerComponent } from './components/customer/dumb-customer/dumb-customer.component';
 import { CardComponent } from './components/card/card.component';
 import { FormControlErrorsComponent } from './components/form-control-errors/form-control-errors.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { CarouselItemDirective } from './directives/carousel-item.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormControlErrorsComponent } from './components/form-control-errors/for
     SmartCustomerComponent,
     DumbCustomerComponent,
     CardComponent,
-    FormControlErrorsComponent
+    FormControlErrorsComponent,
+    SliderComponent,
+    CarouselItemDirective
   ],
   imports: [
     BrowserModule,
